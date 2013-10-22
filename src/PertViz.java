@@ -19,12 +19,12 @@ public class PertViz {
 
 		System.out.println("Welcome to PertViz - *.pert to *.dot converter.");
 		System.out.println("Enter location of *.pert file (input):");
-//		String inputFile = in.nextLine();
+		String inputFile = in.nextLine();
 		System.out.println("Enter location of *.dot file (output):");
-//		String outputFile =  in.nextLine();
+		String outputFile =  in.nextLine();
 
-		String inputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/pertInput.pert";
-		String outputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/out.dot";
+//		String inputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/pertInput.pert";
+//		String outputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/out.dot";
 
 		try {
 
