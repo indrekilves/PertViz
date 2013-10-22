@@ -3,6 +3,7 @@
  */
 public class PrecedenceRelation
 {
+
 	private Task toTask;
 	
 	public void setToTask( Task toTask )
@@ -20,5 +21,9 @@ public class PrecedenceRelation
 		
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "PrecedenceRelation [toTask=" + toTask + "]";
+	}
+
 }

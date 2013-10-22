@@ -2,6 +2,7 @@
  * @(#) TaskCollection.java
  */
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,9 +12,13 @@ public class TaskCollection
 {
 	private java.util.List<Task> tasks;
 	
+	public TaskCollection() {
+		this.tasks = new ArrayList<Task>();
+	}
+
 	public void addTask( Task task )
 	{
-		
+		this.tasks.add(task);		
 	}
 	
 	public Task getTaskByID( Integer taskID )
@@ -43,6 +48,16 @@ public class TaskCollection
 				return task;
 		}
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		StringBuffer s = new StringBuffer("TaskCollection [tasks=");
+		for (Task task : this.tasks) {
+			s.append(task.toString() + ",");
+		}
+		s.append("]");
+		return s.toString();		
 	}
 	
 

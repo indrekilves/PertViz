@@ -17,6 +17,9 @@ public class TaskParser
 	public TaskCollection parseTasksFromFile( String pertFileName ) throws IOException
 	{
 		List<String> pertFileLines = readPertFile(pertFileName);
+		
+	    System.out.println("Pert file content: " + pertFileLines);
+
 		return parseTasksFromLines(pertFileLines);
 	}
 	
@@ -46,8 +49,11 @@ public class TaskParser
 				
 				task.setFromTask(parentTaskRel);
 			}
+			
+			tc.addTask(task);
 		}
 		
+		System.out.println("Created " + tc.toString());
 		return tc;
 	}
 

@@ -45,6 +45,12 @@ public class Task
 	{
 		return fromTask;
 	}
+
+	@Override
+	public String toString() {
+		return "Task [Name=" + Name + ", ID=" + ID + ", durationInDays="
+				+ durationInDays + ", fromTask=" + fromTask + "]";
+	}
 	
 	
 }

@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * @(#) PertViz.java
@@ -13,8 +14,17 @@ public class PertViz {
 	//private DotFileGenerator dotFileGenerator;
 
 	public static void main(String[] args) {
-		String inputFile = args[0];
-		String outputFile = args[1];
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
+
+		System.out.println("Welcome to PertViz - *.pert to *.dot converter.");
+		System.out.println("Enter location of *.pert file (input):");
+//		String inputFile = in.nextLine();
+		System.out.println("Enter location of *.dot file (output):");
+//		String outputFile =  in.nextLine();
+
+		String inputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/pertInput.pert";
+		String outputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/out.dot";
 
 		try {
 
