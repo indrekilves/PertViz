@@ -1,4 +1,4 @@
-import java.util.List;
+
 
 /**
  * @(#) Task.java
@@ -27,11 +27,11 @@ public class Task {
 		this.duration = duration;
 	}
 
-	public List getParentTasks( ) {
+	public java.util.List<Task> getParentTasks( ) {
 		return parentTasks;
 	}
 
-	public void setParentTasks( List parentTasks ) {
+	public void setParentTasks( java.util.List<Task> parentTasks ) {
 		this.parentTasks = parentTasks;
 	}
 
