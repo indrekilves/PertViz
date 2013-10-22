@@ -44,7 +44,6 @@ public class DotFileGenerator
 		bw.write("digraph simplePERT {");
 		bw.newLine();
 		
-		Task startTask = null;
 		Task endTask = null;
 		HashMap<String, String> nodeTasks = new HashMap<String, String>();
 		
@@ -55,7 +54,6 @@ public class DotFileGenerator
 		for (Task task : this.taskCollection.getTasks()) {
 			i++;
 			bw.newLine();
-			startTask = task;
 			
 			if (isFirst){
 				bw.write("s[shape=polygon, sides=4, label=\" Task: " + task.getName() + " ("  + task.getDuration() + " days)\"]");
