@@ -54,6 +54,17 @@ public class TaskCollection
 		s.append("]");
 		return s.toString();		
 	}
+
+	public List<Task> getChildTasksByTask(Task task) {
+		List <Task> childTasks = new ArrayList<Task>();
+		for (Task iTask : this.tasks) {
+			if (iTask.getFromTask().equals(task)){
+				childTasks.add(iTask);
+			}
+		}
+		
+		return childTasks;
+	}
 	
 
 	
