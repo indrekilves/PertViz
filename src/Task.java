@@ -9,34 +9,34 @@ public class Task {
 
 	private String duration;
 	
-	private List<Task> parentTasks;
+	private java.util.List<Task> parentTasks;
 
-	public String getName() {
+	public String getName( ) {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName( String name ) {
 		this.name = name;
 	}
 
-	public String getDuration() {
+	public String getDuration( ) {
 		return duration;
 	}
 
-	public void setDuration(String duration) {
+	public void setDuration( String duration ) {
 		this.duration = duration;
 	}
 
-	public List<Task> getParentTasks() {
+	public List getParentTasks( ) {
 		return parentTasks;
 	}
 
-	public void setParentTasks(List<Task> parentTasks) {
+	public void setParentTasks( List parentTasks ) {
 		this.parentTasks = parentTasks;
 	}
 
 	@Override
-	public String toString() {
+	public String toString( ) {
 		String directParents = "(";
 
 		if (parentTasks.isEmpty()) {
