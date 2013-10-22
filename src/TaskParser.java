@@ -34,7 +34,7 @@ public class TaskParser
 			String[] parts = line.split(",");
 			Task task = new Task();
 			task.setID(Integer.parseInt(parts[0]));
-			task.setName(parts[1]);
+			task.setName("Task " + parts[1]);
 			
 			
 			for (int i = 2; i < parts.length; i++) {
