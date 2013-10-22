@@ -1,56 +1,57 @@
+import java.util.List;
+
 /**
  * @(#) Task.java
  */
-public class Task
-{
-	private String Name;
+public class Task {
+
+	private String name;
+
+	private String duration;
 	
-	private Integer ID;
-	
-	private Integer durationInDays;
-	
-	private PrecedenceRelation fromTask;
-	
-	public void setName( String name )
-	{
-		Name=name;
+	private List<Task> parentTasks;
+
+	public String getName() {
+		return name;
 	}
-	
-	public String getName( )
-	{
-		return Name;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	public void setID( Integer iD )
-	{
-		ID=iD;
+
+	public String getDuration() {
+		return duration;
 	}
-	
-	public Integer getID( )
-	{
-		return ID;
+
+	public void setDuration(String duration) {
+		this.duration = duration;
 	}
-	
-	public Integer getDurationInDays( )
-	{
-		return durationInDays;
+
+	public List<Task> getParentTasks() {
+		return parentTasks;
 	}
-	
-	public void setFromTask( PrecedenceRelation fromTask )
-	{
-		this.fromTask=fromTask;
-	}
-	
-	public PrecedenceRelation getFromTask( )
-	{
-		return fromTask;
+
+	public void setParentTasks(List<Task> parentTasks) {
+		this.parentTasks = parentTasks;
 	}
 
 	@Override
 	public String toString() {
-		return "Task [Name=" + Name + ", ID=" + ID + ", durationInDays="
-				+ durationInDays + ", fromTask=" + fromTask + "]";
+		String directParents = "(";
+
+		if (parentTasks.isEmpty()) {
+			for (Task parentTask : parentTasks) {
+				if (parentTask != null) {
+					directParents += " Name=" + parentTask.getName() + ",";
+				}
+			}
+		} else {
+			directParents += "none";
+		}
+		directParents += ")";
+
+		return "Task [Name=" + name + ", Duration=" + duration + ",ParentIDs="
+				+ directParents + "]";
 	}
-	
-	
+
 }

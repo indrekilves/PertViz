@@ -4,6 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,20 +37,17 @@ public class TaskParser
 		for (String line : pertFileLines) {
 			String[] parts = line.split(",");
 			Task task = new Task();
-			task.setID(Integer.parseInt(parts[0]));
-			task.setName(parts[1]);
-			
+			task.setName(parts[0]);
+			task.setDuration(parts[1]);
+			List<Task> parentTasks = new ArrayList<Task>();
 			
 			for (int i = 2; i < parts.length; i++) {
-				String parentTaskID = parts[i];
-				
-				Task parentTask = tc.getTaskByID(Integer.parseInt(parentTaskID));
-				PrecedenceRelation parentTaskRel = new PrecedenceRelation();
-				parentTaskRel.setToTask(parentTask);
-				
-				task.setFromTask(parentTaskRel);
+				String parentTaskName = parts[i].trim();
+				Task parentTask = tc.getTaskByName(parentTaskName);
+				parentTasks.add(parentTask);
 			}
 			
+			task.setParentTasks(parentTasks);
 			tc.addTask(task);
 		}
 		

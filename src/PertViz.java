@@ -23,9 +23,7 @@ public class PertViz {
 		System.out.println("Enter location of *.dot file (output):");
 		String outputFile =  in.nextLine();
 
-//		String inputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/pertInput.pert";
-//		String outputFile = "/Users/indrekilves/school/systemModelling/PertViz/models/out.dot";
-
+		
 		try {
 
 			TaskParser parser = new TaskParser();

@@ -8,38 +8,33 @@ import java.util.List;
 /**
  * @(#) TaskCollection.java
  */
-public class TaskCollection
-{
+public class TaskCollection {
 	private java.util.List<Task> tasks;
-	
+
 	public TaskCollection() {
 		this.tasks = new ArrayList<Task>();
 	}
 
-	public void addTask( Task task )
-	{
-		this.tasks.add(task);		
+	public void addTask(Task task) {
+		this.tasks.add(task);
 	}
-	
-	public void deleteTaskByID( Integer taskID )
-	{
-		
+
+	public void deleteTaskByID(Integer taskID) {
+
 	}
-	
-	public void setTasks( List<Task> tasks )
-	{
-		this.tasks=tasks;
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
 	}
-	
-	public List<Task> getTasks( )
-	{
+
+	public List<Task> getTasks() {
 		return tasks;
 	}
 
-	public Task getTaskByID(Integer id) {
-		
+	public Task getTaskByName(String name) {
+
 		for (Task task : this.tasks) {
-			if (task.getID() == id)
+			if ( task.getName().equals(name))
 				return task;
 		}
 		return null;
@@ -52,21 +47,19 @@ public class TaskCollection
 			s.append(task.toString() + ",");
 		}
 		s.append("]");
-		return s.toString();		
+		return s.toString();
 	}
 
+	
 	public List<Task> getChildTasksByTask(Task task) {
-		List <Task> childTasks = new ArrayList<Task>();
-		for (Task iTask : this.tasks) {
-			if (iTask.getFromTask().equals(task)){
-				childTasks.add(iTask);
+		List<Task> childTasks = new ArrayList<Task>();
+		for (Task possibleChildTask : this.tasks) {
+			List<Task> parentTasks = possibleChildTask.getParentTasks();
+			if (parentTasks.contains(task)){
+				childTasks.add(possibleChildTask);
 			}
 		}
-		
+
 		return childTasks;
 	}
-	
-
-	
-
 }
