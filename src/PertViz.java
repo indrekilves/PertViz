@@ -5,13 +5,6 @@ import java.util.Scanner;
  * @(#) PertViz.java
  */
 public class PertViz {
-	// private String inputFileName;
-
-	// private String outputFileName;
-
-	//private TaskParser parser;
-
-	//private DotFileGenerator dotFileGenerator;
 
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
