@@ -21,11 +21,6 @@ public class TaskCollection
 		this.tasks.add(task);		
 	}
 	
-	public Task getTaskByID( Integer taskID )
-	{
-		return null;
-	}
-	
 	public void deleteTaskByID( Integer taskID )
 	{
 		
@@ -41,7 +36,7 @@ public class TaskCollection
 		return tasks;
 	}
 
-	public Task getTaskByID(int id) {
+	public Task getTaskByID(Integer id) {
 		
 		for (Task task : this.tasks) {
 			if (task.getID() == id)
